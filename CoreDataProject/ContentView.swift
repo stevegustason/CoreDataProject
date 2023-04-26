@@ -28,9 +28,28 @@ struct ContentView: View {
     }
     
     var body: some View {
-        // This allows us to use \.self in lists, ForEachs, etc.
-        List(students, id: \.self) { student in
-            Text(student.name)
+        VStack {
+            List(wizards, id: \.self) { wizard in
+                Text(wizard.name ?? "Unknown")
+            }
+            
+            Button("Add") {
+                let wizard = Wizard(context: moc)
+                wizard.name = "Harry Potter"
+            }
+            
+            Button("Save") {
+                do {
+                    try moc.save()
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+            
+            // This allows us to use \.self in lists, ForEachs, etc.
+            List(students, id: \.self) { student in
+                Text(student.name)
+            }
         }
     }
 }
