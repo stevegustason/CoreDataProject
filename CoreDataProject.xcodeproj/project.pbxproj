@@ -11,6 +11,10 @@
 		12B4569229F99D1500F8E921 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4569129F99D1500F8E921 /* ContentView.swift */; };
 		12B4569429F99D1600F8E921 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12B4569329F99D1600F8E921 /* Assets.xcassets */; };
 		12B4569729F99D1600F8E921 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12B4569629F99D1600F8E921 /* Preview Assets.xcassets */; };
+		12B4569E29F9A4EB00F8E921 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4569D29F9A4EB00F8E921 /* DataController.swift */; };
+		12B456A129F9A50E00F8E921 /* CoreDataProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12B4569F29F9A50E00F8E921 /* CoreDataProject.xcdatamodeld */; };
+		12B456A429F9AD4000F8E921 /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B456A229F9AD4000F8E921 /* Movie+CoreDataClass.swift */; };
+		12B456A529F9AD4000F8E921 /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B456A329F9AD4000F8E921 /* Movie+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		12B4569129F99D1500F8E921 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		12B4569329F99D1600F8E921 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12B4569629F99D1600F8E921 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		12B4569D29F9A4EB00F8E921 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		12B456A029F9A50E00F8E921 /* CoreDataProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataProject.xcdatamodel; sourceTree = "<group>"; };
+		12B456A229F9AD4000F8E921 /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataClass.swift"; sourceTree = "<group>"; };
+		12B456A329F9AD4000F8E921 /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +43,8 @@
 		12B4568329F99D1500F8E921 = {
 			isa = PBXGroup;
 			children = (
+				12B456A229F9AD4000F8E921 /* Movie+CoreDataClass.swift */,
+				12B456A329F9AD4000F8E921 /* Movie+CoreDataProperties.swift */,
 				12B4568E29F99D1500F8E921 /* CoreDataProject */,
 				12B4568D29F99D1500F8E921 /* Products */,
 			);
@@ -53,6 +63,8 @@
 			children = (
 				12B4568F29F99D1500F8E921 /* CoreDataProjectApp.swift */,
 				12B4569129F99D1500F8E921 /* ContentView.swift */,
+				12B4569D29F9A4EB00F8E921 /* DataController.swift */,
+				12B4569F29F9A50E00F8E921 /* CoreDataProject.xcdatamodeld */,
 				12B4569329F99D1600F8E921 /* Assets.xcassets */,
 				12B4569529F99D1600F8E921 /* Preview Content */,
 			);
@@ -138,6 +150,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				12B4569229F99D1500F8E921 /* ContentView.swift in Sources */,
+				12B4569E29F9A4EB00F8E921 /* DataController.swift in Sources */,
+				12B456A129F9A50E00F8E921 /* CoreDataProject.xcdatamodeld in Sources */,
+				12B456A429F9AD4000F8E921 /* Movie+CoreDataClass.swift in Sources */,
+				12B456A529F9AD4000F8E921 /* Movie+CoreDataProperties.swift in Sources */,
 				12B4569029F99D1500F8E921 /* CoreDataProjectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,6 +353,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		12B4569F29F9A50E00F8E921 /* CoreDataProject.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				12B456A029F9A50E00F8E921 /* CoreDataProject.xcdatamodel */,
+			);
+			currentVersion = 12B456A029F9A50E00F8E921 /* CoreDataProject.xcdatamodel */;
+			path = CoreDataProject.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 12B4568429F99D1500F8E921 /* Project object */;
 }
