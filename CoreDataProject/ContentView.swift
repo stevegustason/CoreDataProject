@@ -18,6 +18,8 @@ struct ContentView: View {
     
     @FetchRequest(sortDescriptors: []) var wizards: FetchedResults<Wizard>
     
+    @FetchRequest(sortDescriptors: [], predicate: nil) var ships: FetchedResults<Ship>
+    
     let students = [Student(name: "Harry Potter"), Student(name: "Hermione Granger")]
     
     func save() {
@@ -49,6 +51,30 @@ struct ContentView: View {
             // This allows us to use \.self in lists, ForEachs, etc.
             List(students, id: \.self) { student in
                 Text(student.name)
+            }
+            
+            List(ships, id: \.self) { ship in
+                            Text(ship.name ?? "Unknown name")
+                        }
+
+            Button("Add Examples") {
+                let ship1 = Ship(context: moc)
+                ship1.name = "Enterprise"
+                ship1.universe = "Star Trek"
+                
+                let ship2 = Ship(context: moc)
+                ship2.name = "Defiant"
+                ship2.universe = "Star Trek"
+                
+                let ship3 = Ship(context: moc)
+                ship3.name = "Millennium Falcon"
+                ship3.universe = "Star Wars"
+                
+                let ship4 = Ship(context: moc)
+                ship4.name = "Executor"
+                ship4.universe = "Star Wars"
+                
+                try? moc.save()
             }
         }
     }
