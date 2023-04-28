@@ -115,7 +115,7 @@ struct ContentView: View {
              */
             
             // Since our FilteredList view is generic now, we have to pass in the filterKey, value, and also the closure parameter so Swift understands how this view is being used
-            FilteredList(filterKey: "lastName", filterValue: lastNameFilter, predicate: .beginsWith, sortDescriptors: [SortDescriptor(\.firstName, order: .reverse)]) { (singer: Singer) in
+            FilteredList(filterKey: "lastName", filterValue: lastNameFilter, predicate: .beginsWith, sortDescriptors: [SortDescriptor(\Singer.lastName)]) { (singer: Singer) in
                 Text("\(singer.wrappedFirstName) \(singer.wrappedLastName)")
             }
             
