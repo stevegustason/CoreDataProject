@@ -30,6 +30,10 @@ struct FilteredList: View {
 // Generic filtered list that can be used with any entity and any property
 struct FilteredList<T: NSManagedObject, Content: View>: View {
     @FetchRequest var fetchRequest: FetchedResults<T>
+    
+    enum predicateOptions {
+        case beginsWith, contains, predIn
+    }
 
     // This is our content closure; we'll call this once for each item in the list
     let content: (T) -> Content
@@ -40,9 +44,21 @@ struct FilteredList<T: NSManagedObject, Content: View>: View {
         }
     }
 
-    init(filterKey: String, filterValue: String, @ViewBuilder content: @escaping (T) -> Content) {
+    init(filterKey: String, filterValue: String, predicate: predicateOptions, sortDescriptors: [SortDescriptor<T>], @ViewBuilder content: @escaping (T) -> Content) {
+        
+        var stringPredicate: String
+
+        switch predicate {
+        case .beginsWith:
+            stringPredicate = "BEGINSWITH"
+        case .contains:
+            stringPredicate = "CONTAINS"
+        case .predIn:
+            stringPredicate = "IN"
+        }
+        
         // %K is a special symbol that will insert our key values, but without quotes around them
-        _fetchRequest = FetchRequest<T>(sortDescriptors: [], predicate: NSPredicate(format: "%K BEGINSWITH %@", filterKey, filterValue))
+        _fetchRequest = FetchRequest<T>(sortDescriptors: sortDescriptors, predicate: NSPredicate(format: "%K \(stringPredicate) %@", filterKey, filterValue))
         self.content = content
     }
 }
